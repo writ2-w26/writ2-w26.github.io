@@ -1,0 +1,298 @@
+<script>
+    import Header from '$components/Header.svelte';
+    import Box from "$components/Box.svelte";
+    import Facts from "$components/Facts.svelte";
+    import Button from "$components/Button.svelte";
+
+    const icons = {
+        calendar: "M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Z",
+        author: "M560-120v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-340L683-120H560Zm-400-40v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q37 0 73 4.5t72 14.5L480-276v116H160Zm663-184 37-39-37-37-38 38 38 38ZM367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47Z",
+
+    }
+
+    let atr = $state(false);
+    $effect(() => {
+        console.log(atr)
+    })
+</script>
+
+<Header />
+
+<main>
+    <h1>Futuristic Technology: Promise and Environmental Pressure</h1>
+    <p class="attribution">
+        <span>
+            <svg viewBox="0 -960 960 960" height="1rem"><path d={icons.calendar}/></svg>
+            March 15, 2026
+        </span>
+
+        <span>
+            <svg viewBox="0 -960 960 960" height="1rem"><path d={icons.author}/></svg>
+            Jeffrey Huang, Jeffrey Lin, Alan Man
+        </span>
+    </p>
+
+    <Box bind:checked={atr}/>
+
+    <section class="article all" class:attr={atr}>
+        <h2>Intro</h2>
+        <p class="">New technologies like generative AI, data centers, and improving systems are used as engines of progress. They make more intelligent cities, more efficient services, and new innovations in medicine, transportation, communication, public health, urban development, education, finance, ethics, and political systems. This reshapes how communities function and how people interact with the world around them. The sources we collected show a consistent pattern: that the quick expansion of AI and digital infrastructure is pushing large increases in electricity consumption, water use, and extraction of fossil fuels which all have direct consequences for human well‑being and the environment. As we humans increasingly advance into more powerful forms of technology, the tension between innovation and environmental responsibility becomes impossible to ignore. Yet these same innovations introduce new pressures on natural resources, energy systems, and ecological stability. Understanding this is critical for navigating a future where progress must be balanced with sustainability.</p>
+    </section>
+
+
+    <section class="article h" class:attr={atr}>
+        <h2>Environmental Problems</h2>
+
+        <p>One of the most common themes across our sources is that AI’s environmental footprint is not abstract as it directly affects human living. Adam Zewe’s MIT News article shows that generative AI systems use massive computational power, which means “increasing electricity demand and water consumption that concerns long‑term sustainability.” Zewe notes that global data center electricity use hit “460 terawatt-hours in 2022” and is projected to reach “1050 terawatt-hours” by 2026. This amount of energy consumption is a climate issue and public health issue.</p>
+
+        <h4>Air Pollution and Respiratory Health</h4>
+        <p>Burning fossil fuels to power data centers releases pollutants such as nitrogen oxides, sulfur dioxide, and particulate matter substances known to worsen asthma, cardiovascular disease, and lung cancer. The Yale Environment 360 article by Benjamin Storrow makes this connection. He reports that in the form of gas‑fired power plants, built specifically to feed AI‑driven data centers, could emit “17 million tons of carbon dioxide annually.” Communities near these facilities face increased exposure to air pollution, which disproportionately harms low‑income and marginalized populations. This is a problem because the good services that AI provide are distributed throughout but it also comes with many health burdens.</p>
+
+        <h4>Water Scarcity and Public Health</h4>
+        <p>Water is another important discussion. Zewe’s article explains that each AI query requires electricity and also water for cooling “two liters per kWh,” UNEP adds that in water‑scarce regions, expanding AI infrastructure “could exacerbate existing shortages.” When water is used to cool servers instead of serving households, agriculture, or sanitation systems, public health puts an increasing risk of running out of water.</p>
+
+        <Facts image="/drought.jpg" content="
+            Water scarcity leads to:
+            <ul>
+                <li>reduced hygiene and increased disease transmission</li>
+                <li>higher concentrations of pollutants in drinking water</li>
+                <li>stress on hospitals and emergency services</li>
+                <li>heat‑related illnesses when cooling centers or public fountains cannot operate</li>
+            </ul>
+        "
+        />
+
+        <h4>Climate Change and Health Vulnerability</h4>
+        <p>The article by David Nutt projects that 4 years from now, which is 2030, AI data centers could emit “24-44 million metric tons of carbon dioxide annually,” equivalent to “adding 5 to 10 million cars to U.S. roadways.” This is bad because climate change intensifies heat waves, wildfires, and extreme weather all of which have direct health consequences. Like imagine living in hot temperature for the rest of your life, and having a sticky feeling gush through your body from the sweat. Urban populations, especially those in dense or poorly ventilated neighborhoods, are particularly the target and are in more danger than any other group. Moreover, the environmental impact of AI is inseparable from public health outcomes. The more energy and water AI consumes, the more pressure it places on the systems that keep people healthy (and hurts those in marginalized populations more significantly).</p>
+    </section>
+
+    <section class="article h" class:attr={atr}>
+        <h2>Urban Development</h2>
+
+        <p>Futuristic technologies exist in the cloud and they require large physical infrastructures. Data centers, power plants, cooling systems, and transmission lines all take up space within or near urban regions. As AI increases rapidly, cities must change their land use, zoning, and distribution of resources to accommodate these facilities.</p>
+
+        <h4>Land Use and Industrial Clustering</h4>
+        <p>Data centers are very large, high energy consumption buildings that have to be built near reliable power sources. Storrow’s article describes Pennsylvania preparing for “a rash of data centers” that require a lot more electricity than normal industrial facilities. This popularization of digital infrastructure shapes development plans and patterns across all regions. Urban planners have to decide whether to prioritize technological growth or keep community spaces. These decisions have long‑term consequences for livability and environmental damage.</p>
+
+        <Facts image="/datacenter.webp" content="
+            <ul>
+                <li>industrial zones expand</li>
+                <li>residential areas are pushed outward</li>
+                <li>green spaces are replaced with concrete and machinery</li>
+                <li>noise and traffic increase</li>
+            </ul>
+        "/>
+
+        <h4>Education Impact</h4>
+        <p>Zewe notes that each AI question requires significantly more electricity and water than a standard browser search. This means that widespread use of AI in schools increases the environmental footprint of learning and browsing the internet. Hao’s report that training a single AI model can emit as much carbon as “five cars in their lifetimes” warns us about the ecological cost of making the AI academic research and digital instruction. AI promises more efficient education. However the environmental damages show a tension between technological progress and sustainability. This applies especially for institutions with low clean‑energy infrastructure.</p>
+
+        <h4>Financial Impact</h4>
+        <p>When we use things like artificial intelligence and expanding digital transactions. These innovations come with significant environmental and economic costs. As the International Energy Agency warns, “the rapid growth of data traffic and connected devices is driving a sharp rise in electricity demand,” meaning financial institutions increasingly depend on energy‑intensive infrastructures that strain power grids and raise up prices that keep the operation going. Kate Crawford’s argument that AI is a “planetary‑scale industry” rooted in extraction shows that  financial growth is related to resource‑heavy supply chains and fossil fuel powered data centers. This creates more  financial risks, from carbon related regulations to volatility in energy markets. AI promises efficiency and smarter investment strategies, but the environmental footprint reveals that it is inseparable from rising energy consumption, higher emissions, and long term sustainability challenges.</p>
+
+        <Facts image="/payment.jpeg" content="
+            <ul>
+                <li>Modern banks store more value in data than in physical cash, making data centers a core part of global finance.</li>
+                <li>Training a single large AI model can use as much electricity as 100 U.S. homes consume in a year.</li>
+                <li>If we had the global financial sector as a country it would be ranked at the top for world’s polluters.</li>
+                <li>Every digital transaction like taps, swipes, and transfers runs through servers that use up energy (cashless economies raise electricity usage).</li>
+            </ul>
+        "/>
+
+        <h4>Strain on Urban Water Systems</h4>
+        <p>UNEP’s article highlights that making hardware for AI uses tons of resources pointing out that “manufacturing a 2kg computer takes about 800 kg of raw materials.” More than manufacturing the ongoing functions of data centers. This places a large strain on municipal water systems. Nutt’s article projects that by 2030, AI data centers could consume “731–1125 million cubic meters of water per year,” equivalent to the household water use of “6–10 million Americans.” Urban development becomes a negotiation and/or argument between technological development and ecological limits. Cities that are already facing drought like as those in the American West, this level of consumption causes discussion for difficult questions:</p>
+        <ul>
+            <li>Should water go to residents or to cooling AI servers?</li>
+            <li>Should cities restrict industrial water use or raise prices?</li>
+            <li>How will water scarcity affect housing development, agriculture, and public services?</li>
+        </ul>
+
+
+        <h4>Energy Infrastructure and Fossil Fuel Lock‑In</h4>
+        <p>One of the most problematic trends is the way AI development forces fossil‑fuel to be used. Storrow’s reporting shows that Pennsylvania is expanding fracking operations and building new gas‑fired power plants specifically to meet data center demand. This creates a long‑term effect, which is that if cities use and invest in fossil‑fuel infrastructure, they are not likely to move to renewable energy which means more fossil fuels being used. Urban development becomes connected to the energy needs of AI which is lots of fossil fuels instead of the health and sustainability needs of residents.</p>
+        <p>This has urban consequences like:</p>
+        <ul>
+            <li>higher greenhouse gas emissions</li>
+            <li>increased air pollution in nearby neighborhoods</li>
+            <li>reduced investment in clean energy alternatives</li>
+            <li>long‑term financial commitments to carbon‑intensive systems</li>
+        </ul>
+    </section>
+
+    <section class="article m" class:attr={atr}>
+        <h2>Ethical Implications of AI and Data-consuming Technologies</h2>
+
+        <h4>Energy Consumption and Carbon Emissions</h4>
+        <p>One of the most important ethical concerns is the crazy large amounts of energy required to run AI systems. As Weinstein explains in the Southern New Hampshire University interview, AI data centers are almost always located in areas where the electrical grid is still mostly all by fossil fuels. This means that every query, model training session, and cloud‑based computation is connected to coal and gas fired power plants. When AI models change from text chatbots to more computationally demanding image, video, and multimodal generators, emissions increase even further and AI companies need to consider the emission and how to use more renewable energy instead of fossil fuels</p>
+        <p>The problem here is:</p>
+        <ul>
+            <li>AI companies benefit from cheap, carbon‑intensive energy and the environmental costs like air pollution, climate change, and public health impacts are pushed onto surrounding communities and AI companies take no responsibility for it.</li>
+            <li>The scale of emissions is accelerating rapidly O’Donnell reports in MIT Technology Review that U.S. data center emissions have tripled since 2018 and now is comparable to those of domestic airlines. This causes discussion of the ethical question whether the tech industry is being responsible when it continues to expand AI capabilities without proportionally investing in renewable energy or ways to lower emissions.</li>
+        </ul>
+
+        <h4>Water Depletion and Local Resource Strain</h4>
+        <p>Another major problem is the stress and reliant AI does to local water supplies. Nicoletti and colleagues at Bloomberg say that data centers are starting to be built in areas already facing water crises. This raises red flags like:</p>
+        <ul>
+            <li>Communities with limited water resources are forced to compete with billion‑dollar tech companies for access to a basic necessity.</li>
+            <li>The siting decisions prioritize cheap land and favorable regulations over environmental sustainability, effectively shifting the burden of water depletion onto vulnerable regions.</li>
+            <li>The rapid expansion of AI infrastructure driven by ChatGPT and similar systems has intensified the problem, with a 70% increase in data center construction in just three years.</li>
+        </ul>
+        <p>The Texas example is particularly striking because a hydrologist warns that the entire state is facing a “water‑energy nexus crisis,”. This means that the more energy AI requires, the more water is consumed for cooling and the more strained local ecosystems become. This causes ethical questions about environmental justice based on where datacenters are built and what are the effects it will have on people.</p>
+
+        <h4>Resource Extraction and Global Supply Chains</h4>
+        <p>AI’s environmental effect is more than just electricity and water. As De Mott reports in Markets Insider, the demand for copper, an essential material for electronics and data center infrastructure, is expected to rise by as much as 72% in the coming decades. This creates challenges:</p>
+        <ul>
+            <li>Mining is already known to cause severe environmental degradation, including habitat destruction, toxic waste, and water contamination.</li>
+            <li>The global copper supply is going down with inventories at low levels since 2008, and new mines take more than a decade to open.</li>
+        </ul>
+        <p>The ethical issue here is that AI’s growth relies on resource heavy supply chains that impact countries and communities far removed from the benefits of AI technologies. This raises concerns about equity. Is it ethical for wealthy nations and corporations to drive demand for materials whose extraction harms ecosystems and communities?</p>
+
+        <h4>Community Impacts and Public Safety</h4>
+        <p>Along with environmental concerns AI infrastructure directly affects the everyday lives of residents living nearby. Wilkins’ reporting in Futurism reveals a list of community concerns caused:</p>
+        <ul>
+            <li>Noise pollution from data centers that sounds like a “distant jet that never leaves.”</li>
+            <li>Increasing utility prices as local grids struggle to meet the energy demands of massive facilities.</li>
+            <li>Water shortages with some residents reporting that their taps stop running.</li>
+            <li>Public safety risks, including data center fires that overwhelm local fire departments. Examples such as the Amazon facility in Ohio that required 84 emergency responses in four years.</li>
+        </ul>
+        <p>These issues show an ethical imbalance. This is because communities have to deal with the risks and disruptions while AI corporations take the profits from these datacenters. The example of a CEO illegally burning fossil fuels inside a neighborhood shows potential for abuse when oversight is weak and incentivises rapid expansion for profits more than the well being of the communities.</p>
+
+        <h4>Transparency, Accountability, and Corporate Responsibility</h4>
+        <p>A theme is the lack of transparency and accountability in the tech industry’s environmental practices. Are companies accurately reporting their emissions, water use, and resource consumption? Do they invest in sustainable alternatives or expand infrastructure as cheaply as possible? Do communities have a say in decisions that affect their neighborhood? Should governments step foot in to control AI’s environmental footprint more aggressively?</p>
+
+        <h4>The Lifecycle Costs of AI Hardware</h4>
+        <p>Another major ethical concern that is not looked at enough is the lifecycle impact of the physical hardware behind AI from manufacturing to disposal. When Weinstein notes that “without ever being turned on, a server’s lifecycle still results in significant carbon emissions.” That point opens up an entire ethical discussion. AI is software but it’s also built using massive amounts of physical equipment like servers, GPUs, cooling systems, networking hardware, and miles of copper wiring. Each of these components take large amounts of fuels and emissions which have an environmental footprint before it ever reaches a data center. When we extract raw materials to make AI hardware metals like copper, lithium, cobalt, and rare earth elements. When we gather these materials it involves toxic waste, deforestation, and dangerous labor conditions. AI hardware becomes obsolete in a fast period like 2-3 years. This makes manufacturing demand go up and increases the amount of waste.</p>
+        <Facts image="/waste.jpg" content="
+            <ul>
+                <li>Discarded servers and chips contribute to the world’s fastest growing waste stream electronic waste.</li>
+                <li>E‑waste often ends up in developing countries, where it is removed in unsafe conditions producing toxins like lead and mercury into soil and water.</li>
+                <li>Tech companies rarely disclose the environmental cost of their hardware supply chains.</li>
+            </ul>
+        "/>
+
+        <h4>Working Toward an Ethical Framework for AI Development</h4>
+        <p>The ethical questions connected to AI and data‑driven technologies extend to abstract debates about fairness or algorithmic bias. Our research shows that the physical infrastructure behind AI including servers, data centers, cooling systems, mining operations all have real, measurable impacts on the environment and on communities around the world. For AI to be ethical it must have:</p>
+        <ul>
+            <li>Sustainable energy practices</li>
+            <li>Responsible water management</li>
+            <li>Transparent supply chains</li>
+            <li>Stronger regulatory oversight</li>
+        </ul>
+        <p>If AI does not have these systems, the rapid expansion of AI will cause environmental degradation and accelerate resource scarcity, therefore disproportionate burdens on populations that are already vulnerable or at risk. Ethical AI is about how algorithms behave and also about how the entire ecosystem that supports them interacts with the planet.</p>
+    </section>
+
+    <section class="article l" class:attr={atr}>
+        <h2>Education</h2>
+
+        <h4>The New Architecture of Learning</h4>
+        <p>Education is currently going through the most dramatic transformations in its history. Artificial intelligence, cloud‑based classrooms, and adaptive learning platforms are teaching students to learn differently. These tools make personalization, accessibility, and efficiency all benefits that seem especially valuable in a world becoming more dependent on digital literacy. However, the systems that make learning easier to access and data driven rely on high energy infrastructures and resource‑heavy hardware. As our research shows across multiple sectors, the environmental damage of AI is measurable, growing, and connected to education as it moves more towards being digital.</p>
+        <p>This section talks about the environmental and ethical implications of education that uses a lot of AI. AI promises innovation in the classroom but it's inseparable from the pressures placed on energy systems and local communities. Understanding these impacts is important for building an educational future technologically advanced and also environmentally responsible.</p>
+
+        <h4>The Rise of AI‑Powered Learning</h4>
+        <p>AI has become an important tool in modern education. K–12 schools use adaptive learning platforms that adjust difficulty in real time. Colleges rely on cloud based systems for grading, plagiarism detection, tutoring, and decision making. Even basic classroom tools like digital textbooks, video lectures, and online assessments depend on data centers and ML algorithms. But these benefits come with environmental costs. Every AI tutoring session, every cloud‑stored assignment, and every predictive model requires computational power.</p>
+
+        <h4>The Hidden Cost of Digital Classrooms</h4>
+        <p>The most significant environmental pressures come from the energy required to build and use AI systems. As Weinstein explains in the SNHU interview, data centers are located in regions where the electrical grid heavily uses fossil fuels. This means digital tools used in classrooms like Zoom lectures and online homework systems are connected to coal and gas fired power plants. Schools adopt AI to modernize learning and improve equity. But the infrastructure behind these tools increases carbon emissions. In education, this means that the more institutions rely on AI‑driven tools, the more they contribute to the very environmental challenges they often teach students to solve.</p>
+
+        <h4>Water Depletion: Cooling the Engines of Digital Learning</h4>
+        <p>Another environmental issue comes from water usage. Data centers require crazy amounts of water to cool their servers, and as Nicoletti’s Bloomberg article shows, many are built in regions already dealing with water scarcity. This has implications for education:</p>
+        <ul>
+            <li>Universities partner with tech companies to host AI research centers.</li>
+            <li>These centers rely on the same water‑intensive cooling systems as commercial data centers.</li>
+            <li>As AI adoption grows it strains local water supplies.</li>
+        </ul>
+        <p>The Texas example is relevant as OpenAI expands its data centers; hydrologists warn that the state faces a “water‑energy nexus crisis.” If educational institutions continue to use AI into their operations, they become part of this crisis even if they did not intend to.</p>
+
+        <h4>Hardware, Supply Chains, and the Lifecycle of Educational Technology</h4>
+        <p>AI‑powered education depends on software and also on physical hardware like servers, GPUs, laptops, tablets, etc. As De Mott’s reporting on copper shortages shows, the demand for materials like copper is rapidly increasing because of AI being everywhere. Copper is needed for wiring, circuitry, and data center infrastructure, everything that makes digital education possible. Mining copper and other essential materials causes deforestation, toxic runoff, and habitat destruction. Before a server or laptop is turned on it has already caused carbon emissions through manufacturing. Educational institutions replace hardware every few years to keep up with software demands. AI boosts this cycle because new models require more powerful chips.</p>
+
+        <h4>Infrastructure Strain and Community Impact</h4>
+        <p>Our research on data center fires and community disruptions is another part of the problem: the physical infrastructure supporting AI can negatively affect local communities. As schools and universities use more AI tools, they increase demand for larger data centers, more powerful cooling systems, expanded electrical grids, and additional server farms. Educational institutions may not build these data centers themselves, but their technological demands contribute to the need for them.</p>
+
+        <h4>Equity and the Digital Divide</h4>
+        <p>AI in education is a tool for equity helping underserved students access personalized learning. Communities near data centers bear the environmental costs and they might not benefit from the educational tools those centers support. Students in wealthier districts can access AI‑powered tools; students in poorer districts cannot. Students who can afford premium AI tools have an advantage on those who can't.</p>
+
+        <h4>The Ethical Responsibility of Educational Institutions</h4>
+        <p>Given these pressures, educational institutions have a responsibility to check the environmental impact of their technological choices. They can do this by demanding transparency from tech companies about energy and water use. They can also invest in sustainable infrastructure. They should also teach students about the environmental cost of digital systems and advocate for responsible AI development. Universities, in particular, are most important for change. They are centers of research, innovation, and public discourse. If they adopt AI without considering consequences, they normalize unsustainable practices for the next generations to come.</p>
+
+        <h4>Moving towards Sustainable Digital Learning</h4>
+        <p>AI has the potential to transform education by making learning more accessible and efficient. But as our research shows, these benefits have environmental pressures, rising energy consumption, water depletion, resource extraction, and community disruption. The future of education therefore needs to balance innovation with sustainability. This means things like designing energy‑efficient AI systems, building data centers powered by renewable energy, supporting responsible mining practices prioritizing environmental justice educating students about the ecological footprint of digital tools By understanding these pressures educational institutions make sure that new tech in classrooms does not come at the expense of hurting the communities that depend on it.</p>
+    </section>
+
+    <section class="article all" class:attr={atr}>
+        <h2>Conclusion</h2>
+
+        <h4>A Future Worth Building</h4>
+        <p>Our research shows across every section environment, urban development, ethics, and education the increase of technologies is changing the world in ways that are inspiring but challenging as in questioning how do we move forward without hurting communities and the environment. AI powers smarter cities, more adaptive classrooms, and faster financial systems. But these technologies also rely on infrastructures that use large amounts of electricity, water, minerals, and land. Their environmental footprint is not invisible and can be measured, accelerating, and already reshaping the lives of communities worldwide.</p>
+        <p>It is pretty obvious that data centers drive up electricity demand, often relying on fossil‑fuel power plants that worsen air pollution and contribute to climate change. Nextly, water‑intensive cooling systems strain local supplies, especially in drought prone regions. Mining for copper and other essential materials damages ecosystems and exposes global inequalities. Even the physical presence of data centers is crazy loud, resource‑hungry, and burdens public services. These impacts reveal a pattern: the benefits of AI are widely shared, but the environmental and social costs are often concentrated in specific communities.</p>
+        <p>The future is not fixed. The creativity that powers new tech innovation can be directed toward sustainability. Cities can make smarter zoning and energy systems. Schools and universities can use digital tools responsibly. Tech companies can invest in renewable energy, transparent supply chains, and water‑efficient cooling. Policymakers can set standards that make sure there is environmental responsibility that continues as tech grows. A future worth building is one where innovation and sustainability move together in partnership. If we choose to confront the environmental pressures of AI with honesty, accountability, and imagination, we can build a world where technological progress strengthens instead of undermines the planet we depend on.</p>
+    </section>
+
+    <Button />
+</main>
+
+
+<style>
+    h2, h4 {
+        text-align: left;
+    }
+    .attr {
+        padding: 0 8px 0 8px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        &.all {
+            border: 1px solid rgb(0 0 0 / 50%);
+            background: rgb(0 0 0 / 20%);
+        }
+        &.h {
+            border: 1px solid rgb(0 150 150 / 50%);
+            background: rgb(0 150 150 / 20%);
+        }
+        &.m {
+            border: 1px solid rgb(150 0 150 / 50%);
+            background: rgb(150 0 150 / 20%);
+
+        }
+        &.l {
+            border: 1px solid rgb(150 150 0 / 50%);
+            background: rgb(150 150 0 / 20%);
+        }
+    }
+    ul {
+        margin-block: -10px 8px;
+    }
+    main {
+        padding-inline: 16px;
+        max-width: 600px;
+        margin: 0 auto;
+        h1 {
+            text-align: left;
+            font-family: "InterVariable", sans-serif;
+        }
+        .attribution {
+            text-align: left;
+            opacity: 50%;
+            font-size: 0.8rem;
+            margin-block: 4px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2px;
+            span {
+                font-family: "InterVariable", sans-serif;
+                display: flex;
+                gap: 2px;
+                &:first-child {
+                    margin-right: 7px;
+                }
+            }
+        }
+        .article {
+            text-align: justify;
+            line-height: 1.5;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+</style>

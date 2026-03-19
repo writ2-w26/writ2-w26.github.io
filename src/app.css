@@ -1,0 +1,38 @@
+:root {
+    interpolate-size: allow-keywords;
+    --curve: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+}
+body {
+    font-family: "EB Garamond", serif;
+    transition-behavior: allow-discrete;
+    interpolate-size: allow-keywords;
+}
+
+@font-face {
+    font-family: InterVariable;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/InterVariable.woff2') format('woff2');
+}
+@font-face {
+    font-family: InterVariable;
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/InterVariable-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "EB Garamond";
+    src: url("/fonts/EBGaramond-VariableFont.ttf");
+}
+@font-face {
+    font-family: "EB Garamond";
+    src: url("/fonts/EBGaramond-VariableFont.ttf");
+    font-style: italic;
+}
